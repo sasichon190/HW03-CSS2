@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css-Hw3-Responsive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: auto;
+            background-color: rgb(245, 245, 245);
+            height: 90vh;
+            max-width: 1200px;
+        }
+
+        main {
+            /* outline: 1px dashed brown; */
+            height: 60vh;
+            margin: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        main>* {
+            flex: 1;
+        }
+
+        .left {
+            /* outline: 1px dashed rgb(165, 42, 144); */
+            flex-basis: 350px;
+            font-size: 32px;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        .right {
+            /* outline: 1px dashed rgb(165, 42, 144); */
+            flex-basis: 350px;
+            font-size: 16px;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form {
+            background-color: white;
+            box-shadow: 5px 5px 5px rgb(230, 230, 230);
+            width: 350px;
+            border-radius: 8px;
+            padding: 10px;
+
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        input[type=text] {
+            width: 100%;
+            font-size: 18px;
+            padding: 12px 20px;
+            margin: 5px auto;
+            border: 1px solid rgb(235, 235, 235);
+            border-radius: 5px;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: dodgerblue;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            margin-top: 8px;
+        }
+
+        input[type=submit]:hover{
+            background-color: rgb(20, 92, 165);
+        }
+        .forgotten {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            color: dodgerblue;
+            text-decoration: none;
+            border-bottom: 1px solid rgb(223, 223, 223);
+        }
+        .forgotten:hover{
+            text-decoration: 1px underline dodgerblue;
+        }
+
+        .create {
+            width: 50%;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 206, 0);
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 30px auto 30px auto;
+        }
+
+        .create:hover{
+            background-color: rgb(0, 155, 0);
+        }
+
+        .caption {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .caption>a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .caption>a:hover {
+            text-decoration: 1px underline black;
+            color: black;
+        }
+
+        footer {
+            background-color: white;
+            height: 20vh;
+            margin: 200px auto 0px auto;
+        }
+
+        .language {
+            /* outline: 1px dashed rgb(165, 42, 144); */
+            padding: 10px 0px;
+            margin: 0px 50px;
+            border-bottom: 1px solid rgb(189, 189, 189);
+            text-align: justify;
+        }
+
+        .language>a {
+            font-size: 14px;
+            color: gray;
+            text-decoration: none;
+            margin: 5px 5px;
+        }
+
+        .language a:hover:not(.active) {
+            text-decoration: 1px underline grey;
+        }
+
+        .other {
+            background-color: rgb(245, 245, 245);
+            color: grey;
+            font-weight: bold;
+            padding: 2px 10px;
+            border-radius: 2px;
+            border: 1px solid rgb(168, 168, 168);
+            text-decoration: none;
+        }
+
+        .other:hover {
+            background-color: rgb(202, 202, 202);
+        }
+
+        .general {
+            padding: 10px 0px;
+            margin: 0px 50px;
+        }
+
+        .general>a {
+            font-size: 14px;
+            color: gray;
+            text-decoration: none;
+            margin: 0px 5px;
+        }
+
+        .general a:hover {
+            text-decoration: 1px underline grey;
+        }
+
+        @media(max-width: 1000px) {
+            .left {
+                font-size: 24px;
+            }
+
+            .left p {
+                width: 350px;
+            }
+        }
+
+        @media(max-width: 816px) {
+            .left {
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+            }
+
+            .left p {
+                width: 350px;
+                text-align: center;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="left">
+
+            <img src="./1920px-Facebook-reversed.svg.png" alt="logo-fb" width="250px">
+
+
+            <p>Facebook ช่วยคุณเชื่อมต่อและแชร์กับผู้คนมากมายรอบตัวคุณ</p>
+        </div>
+        <div class="right">
+            <div class="form">
+                <form action="#">
+                    <input type="text" id="e-mail" name="e-mail" placeholder="อีเมล์หรือหมายเลขโทรศัพท์">
+                    <input type="text" id="password" name="password" placeholder="รหัสผ่าน">
+                    <input type="submit" value="Log In">
+                </form>
+                <a href="#" class="forgotten">ลืมรหัสผ่านใช่หรือไม่?</a>
+                <a href="#" class="create">สร้างบัญชีใหม่</a>
+            </div>
+
+            <div class="caption"><a href="#">สร้างเพจ</a> สร้างเพจ สำหรับคนดัง แบรนด์ หรือธุรกิจ</div>
+        </div>
+    </main>
+    <footer>
+        <div class="language">
+            <a href="#" class="active">ภาษาไทย</a>
+            <a href="#">English (UK)</a>
+            <a href="#">日本語</a>
+            <a href="#">中文(简体)</a>
+            <a href="#">Tiếng Việt</a>
+            <a href="#">Français (France)</a>
+            <a href="#">Deutsch</a>
+            <a href="#">Русский</a>
+            <a href="#">Español</a>
+            <a href="#">Português (Brasil)</a>
+            <a href="#">Italiano</a>
+            <a href="#" class="other">+</a>
+        </div>
+        <div class="general">
+            <a href="#">สมัคร</a>
+            <a href="#">เข้าสู่ระบบ</a>
+            <a href="#">Messenger</a>
+            <a href="#">Facebook Lite)</a>
+            <a href="#">Watch</a>
+            <a href="#">สถานที่</a>
+            <a href="#">เกม</a>
+            <a href="#">Marketplace</a>
+            <a href="#">Facebook Pay</a>
+            <a href="#">Oculus</a>
+            <a href="#">Portal</a>
+            <a href="#">Instagram</a>
+            <a href="#">Bulletin</a>
+            <a href="#">ในพื้นที่</a>
+            <a href="#">โครงการระดมทุน</a>
+            <a href="#">บริการ</a>
+            <a href="#">ศูนย์ข้อมูลการลงคะแนนเสียง</a>
+            <a href="#">กลุ่ม</a>
+            <a href="#">เกี่ยวกับ</a>
+            <a href="#">สร้างโฆษณา</a>
+            <a href="#">สร้างเพจ</a>
+            <a href="#">ผู้พัฒนา</a>
+            <a href="#">ร่วมงานกับ Facebook</a>
+            <a href="#">ความเป็นส่วนตัว</a>
+            <a href="#">คุกกี้</a>
+            <a href="#">ตัวเลือกโฆษณา</a>
+            <a href="#">เงื่อนไข</a>
+            <a href="#">ความช่วยเหลือการตั้งค่าบันทึกกิจกรรม</a>
+        </div>
+    </footer>
+</body>
+
+</html>
